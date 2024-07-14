@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            // "program": "train_1st_order_unbalanced.py",
+            "program": "validate_NC_unbalanced.py",
+            "console": "integratedTerminal",
+            "args": ["--model", "VGG11", 
+            "--no-bias", "--dataset", "svhn", 
+            "--depth_relu", "6", "--depth_linear", "1",
+            "--width", "1024", "--seed", "1", "--sep_decay", 
+            "--batch_size", "32", "--feature_decay_rate", "0.00001", 
+            "--loss", "CrossEntropy", "--lr", "1e-4", 
+            "--weight_decay", "1e-7", "--optimizer", "Adam", 
+            "--epochs", "4000", "--patience", "2000",
+            "--wandb", "False"
+        ], //weight_decay 1e-4
+        "justMyCode": false,
+        "env": {"CUDA_VISIBLE_DEVICES": "0"}
+        },
+    ]
+}
